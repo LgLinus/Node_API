@@ -3,6 +3,9 @@
 var mysql = require("mysql");
 var async = require('async');
 
+var PRODUCTION_DB = 'contacts';
+var DEVELOPMENT_DB = 'contacts';
+
 var state = {
 	pool: null,
 	mode: null,
@@ -17,7 +20,7 @@ exports.connect = function(mode, done) {
 		host: 'localhost',
 		user: obj.user,
 		password: obj.password,
-		database: obj.database
+		database: mode == exports.MODE_PRODUCTION ? PRODUCTION_DB : DEVELOPMENT_DB
 	});
 	state.mode = mode;
 	done();
@@ -71,4 +74,3 @@ exports.drop = function(tables, done) {
 	}, done);
 };
 
-console.log("TEST");
