@@ -1,0 +1,15 @@
+### TODO LIST ###
+
+- Create more scalable routing system
+
+	-	Let app use all routes in the routing folder, don't hardcode each route.
+
+	-	
+
+- Create more complex queries for models
+
+- Create super class for models
+
+- Implement simple web page which uses the api
+
+- Implement authorization
