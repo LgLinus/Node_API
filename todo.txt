@@ -2,7 +2,7 @@
 
 - Create more scalable routing system
 
-	-	Let app use all routes in the routing folder, don't hardcode each route.
+	-	Let app use all routes in the routing folder, don't hardcode each route. DONE
 
 	-	
 
@@ -13,3 +13,6 @@
 - Implement simple web page which uses the api
 
 - Implement authorization
+
+
+
