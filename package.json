@@ -4,7 +4,8 @@
   "description": "Simple api service in node",
   "main": "index.js",
   "dependencies": {
-	"mysql" : "*"
+	"mysql" : "*",
+	"express" : "~4.0.0"
 	},
   "devDependencies": {},
   "scripts": {
