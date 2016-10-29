@@ -1,0 +1,6 @@
+To use.
+
+Run npm install to fetch the needed dependencies.
+
+You need to create a file in the root of the package called .env. There you must specify the needed data for accessing your msql database. Check config/env_template for an example.
+
