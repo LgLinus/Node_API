@@ -14,5 +14,7 @@
 
 - Implement authorization
 
+- page/static/TableJSON.txt
 
-
+	-	Add handling for passing nonarray to CreateTable function
+	-	Add functions for setting cell space width, id, class etc.	

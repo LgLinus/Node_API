@@ -1,3 +1,5 @@
+/* Javascript file containing functions to create a table from a JSON object */
+
 var defaultTableAttributes = {
 		"border" : "1"
 };
@@ -15,8 +17,9 @@ function createTable(arrayObject , attributes) {
         res +=">";
 
         res += getTableHeaders(arrayObject[0]);
+
         arrayObject.forEach(function(row) {
-                res += parseRow(row, res);
+                res += parseRow(row);
         });
 
         res+="</table>";        
@@ -46,28 +49,16 @@ function getTableAttributes(attributes) {
         return res;
 }
 /* Return the row in HTML format as a table data */
-function parseRow(row, res) {
-        columns = [];
-        for (var key in row) {
+function parseRow(row) {
+        var res ="<tr>";
+	for (var key in row) {
                 if (row.hasOwnProperty(key)) {
-                        columns.push(row[key]);
+                	res += "<td>" + row[key] + "</td>";
                 }
         }
-
-        return generateTableRow(columns, res);
-}
-
-/* Return the row in HTML format as table data */
-function generateTableRow(columns) {
-        res = "";
-        res +="<tr>";
-        
-        columns.forEach(function(column) {
-                res += "<td>" + column + "</td>";
-        });     
-
         res += "</tr>";
-
+	// This can be done in the loop above
         return res;
 }
+
 
