@@ -6,6 +6,9 @@ var model = require('../models/user.js');
 
 router.use(function timeLog(req, response, next) {
 	console.log("TIME: ", Date.now());
+	response.header('Access-Control-Allow-Origin', '*');
+	response.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+	
 	next();
 });
 

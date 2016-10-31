@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+</head>
+<script src ="static/TableJSON.js"></script>
+<script>
+
+$(document).ready(function() {
+	$.ajax({
+			url: "http://localhost:8181/user/",
+			type: "GET",
+			context: this,
+			dataType: 'json',
+			error: function(err) {
+				console.log(err);
+			},
+			success: function(response) {
+			
+				var attributes = {
+					"border" : "1",
+					"cellpadding" : "1",
+					"cellspacing" : "1"
+				}
+				$("#myelem").append(createTable(response, attributes));
+			}
+			
+		});
+	});
+
+</script>
+
+<body>
+<p id="myelem"></p>
+</body>
+</html>
