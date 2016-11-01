@@ -12,14 +12,18 @@ router.use(function timeLog(req, response, next) {
 	next();
 });
 
-/*Accessed with http://localhost:8181/user/x where x is an id */
-router.get('/:id', function(request, response) {
-	var id = request.params.id;
-	model.getUserById(response, id, print_data);
+
+router.get('/all', function(req, response) {
+	model.getAll(response,print_data);
 });
 
-router.get('/', function(req, response) {
-	model.getAll(response,print_data);
+/*Accessed with http://localhost:8181/user/x where x is an id */
+router.get('', function(request, response) {
+	// query used for ?id=3
+	var id = request.query.id;
+	// Parameter used for :id
+	// var id = request.params.id
+	model.getUserById(response, id, print_data);
 });
 
 /* Callback function, prints data in json format */
